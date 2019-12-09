@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PrayerAutoReply</string>
+    <string name="splashscreen">SplashScreen</string>
+    <string name="prayer_times">PrayerTimes</string>
+    <string name="prayer_names">Prayer</string>
+    <string name="prayer_start_time">StartTime</string>
+    <string name="prayer_end_time">EndTime</string>
+    <string name="prayer_fajr">Fajr</string>
+    <string name="prayer_Zuhr">Zuhr</string>
+    <string name="prayer_Asr">Asr</string>
+    <string name="prayer_Maghrib">Maghrib</string>
+    <string name="prayer_Isha">Isha</string>
+    <string name="start_time">0:00</string>
+
+
+</resources>
