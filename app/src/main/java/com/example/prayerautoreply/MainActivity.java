@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     boolean GpsStatus;
 
 
-    @SuppressLint("MissingPermission")
+//    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(CheckGpsStatus()) {
-//                      setLocation();
+                    setLocation();
 
                      Intent home= new Intent(MainActivity.this,PrayerActivity.class);
 
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                     enableLocation();
 
                 }
-//
+
 
             }
         });
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
     public void setLocation()
     {
 
-            client = LocationServices.getFusedLocationProviderClient(this);
+            client = LocationServices.getFusedLocationProviderClient(MainActivity.this);
 
             client.getLastLocation().addOnSuccessListener(MainActivity.this, new OnSuccessListener<Location>() {
                 @Override
