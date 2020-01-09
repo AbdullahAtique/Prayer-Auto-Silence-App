@@ -16,6 +16,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
@@ -80,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
         context = getApplicationContext();
 //        boolean gpsstatus = CheckGpsStatus();
-
 
 
 //        if(gpsstatus== true)
@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         return false;
         }
     }
+
     public void setLocation()
     {
 

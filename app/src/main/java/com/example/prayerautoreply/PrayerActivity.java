@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,6 +64,11 @@ public class PrayerActivity extends AppCompatActivity {
 
             mqueue = Volley.newRequestQueue(this);
             getPrayerData(hiturl);
+//           final AudioManager am = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+//            am.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+//            am.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+//
+
 
         }
         else
