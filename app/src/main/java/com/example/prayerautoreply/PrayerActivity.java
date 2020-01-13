@@ -1,13 +1,20 @@
 package com.example.prayerautoreply;
 
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -27,10 +34,13 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Calendar;
+
 public class PrayerActivity extends AppCompatActivity {
 
 
     private FusedLocationProviderClient client;
+
     Context context;
     LocationManager locationManager;
     boolean GpsStatus;
@@ -47,12 +57,59 @@ public class PrayerActivity extends AppCompatActivity {
     TextView maghrib_time;
     TextView isha_time;
 
+    ImageButton fajrSettings;
+
+    ImageButton settings;
+    TimePickerDialog timePickerDialog;
+    Calendar calendar;
+    int currentHour;
+    int currentMinute;
+    String amPm;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainui);
         context = getApplicationContext();
+        settings = findViewById(R.id.btn);
+        settings.setBackgroundColor(Color.TRANSPARENT);
 
+
+//        fajrSettings = findViewById(R.id.btn);
+//        fajrSettings.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AlertDialog alertDialog = new AlertDialog.Builder(PrayerActivity.this).create();
+//                alertDialog.setTitle("Fajr Settings");
+//                alertDialog.setView(new Switch(PrayerActivity.this));
+//            }
+//        });
+
+        fajr_time = findViewById(R.id.fajr_start_time);
+
+        fajr_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timePickerDialog = new TimePickerDialog(PrayerActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                        if(hourOfDay!=0&& minute!=0) {
+                            calendar = Calendar.getInstance();
+                            currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+                            currentMinute = calendar.get(Calendar.MINUTE);
+
+                            fajr_time.setText(String.format("%02d:%02d", hourOfDay, minute));
+                        }
+
+                    }
+
+                },currentHour,currentMinute,false);
+                timePickerDialog.setTitle("Fajr Start Time");
+                timePickerDialog.show();
+
+            }
+        });
         if(CheckGpsStatus()) {
 
                 getLocation();

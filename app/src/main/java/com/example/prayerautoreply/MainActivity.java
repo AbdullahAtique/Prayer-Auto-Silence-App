@@ -8,7 +8,12 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
+import android.app.AlarmManager;
 import android.app.DownloadManager;
+import android.app.PendingIntent;
+import android.app.TimePickerDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,6 +31,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -56,9 +62,12 @@ public class MainActivity extends AppCompatActivity {
     private FusedLocationProviderClient client;
     Button button;
     Button location;
-    Context context;
-    Intent intent1;
     TextView textview;
+
+    Context context;
+
+    private PendingIntent pendingIntent;
+    private AlarmManager alarmManager;
 
     double longit;
     double latit;
@@ -80,6 +89,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         context = getApplicationContext();
+
+//        Intent alarmintent =  new Intent(this,ServiceRestarter.class );
+//
+//        pendingIntent  = PendingIntent.getBroadcast(this,0,alarmintent,0);
+//
+//        alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+//        int interval = 20000;
+//        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),interval,pendingIntent);
+//        Toast.makeText(this,"Service Started",Toast.LENGTH_SHORT).show();
+
 //        boolean gpsstatus = CheckGpsStatus();
 
 
@@ -94,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
 //            enableLocation();
 //        }
 ////        setLocation();
+
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                      home.putExtras(b);
                     startActivity(home);
 
-                    finish();
+//                    finish();
                 }
                 else
                 {
@@ -141,6 +163,26 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+//    @Override
+//    protected void onDestroy() {
+//        stopService(myserviceintent);
+//        super.onDestroy();
+//    }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                Log.i ("Service status", "Running");
+                return true;
+            }
+        }
+        Log.i ("Service status", "Not running");
+        return false;
+    }
+
+
     public boolean CheckGpsStatus(){
         locationManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
         assert locationManager != null;
@@ -201,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
 
 }
