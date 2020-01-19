@@ -1,9 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AutoReply_Messages">
+    tools:context=".AutoReply_Messages"
+    android:background="#F2F7EA"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    >
+
+    <TextView
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2e7d32"
+        android:padding="20sp"
+        android:text="@string/autoreplymessages"
+        android:textAlignment="viewStart"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:drawableStart="@drawable/ic_arrow_back_black_24dp"
+/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="8dp"
+        android:id="@+id/cardview1"
+        android:layout_below="@+id/titlebar"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prayer_fajr"
+                android:padding="5dp"
+                android:textSize="23sp"
+                android:textColor="#000000"
+                android:id="@+id/listitem_fajr"
+                android:paddingLeft="10dp"
+
+                />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="I Am Offering Prayer I'll Call You Back Soon!"
+                android:layout_below="@+id/listitem_fajr"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:id="@+id/fajr_message"
+
+                />
+
+            <ImageButton
+                android:layout_width="57dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/circle_button"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:scaleType="fitXY"
+
+                android:src="@drawable/pencil" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="8dp"
+        android:layout_below="@+id/cardview1"
+
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prayer_Zuhr"
+                android:padding="5dp"
+                android:textSize="23sp"
+                android:textColor="#000000"
+                android:id="@+id/listitem_zuhr"
+                android:paddingLeft="10dp"
+
+                />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="I Am Offering Prayer I'll Call You Back Soon!"
+                android:layout_below="@+id/listitem_zuhr"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:id="@+id/zuhr_message"
+
+                />
+
+            <ImageButton
+                android:layout_width="57dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/circle_button"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:scaleType="fitXY"
+
+                android:src="@drawable/pencil" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="8dp"
+        android:id="@+id/cardview3"
+        android:layout_below="@+id/cardview2"
+
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prayer_Asr"
+                android:padding="5dp"
+                android:textSize="23sp"
+                android:textColor="#000000"
+                android:id="@+id/listitem_asr"
+                android:paddingLeft="10dp"
+
+                />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="I Am Offering Prayer I'll Call You Back Soon!"
+                android:layout_below="@+id/listitem_asr"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:id="@+id/asr_message"
+
+                />
+
+            <ImageButton
+                android:layout_width="57dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/circle_button"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:scaleType="fitXY"
+
+                android:src="@drawable/pencil" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="8dp"
+        android:id="@+id/cardview4"
+        android:layout_below="@+id/cardview3"
+
+        >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prayer_Maghrib"
+            android:padding="5dp"
+            android:textSize="23sp"
+            android:textColor="#000000"
+            android:id="@+id/listitem_maghrib"
+            android:paddingLeft="10dp"
+
+            />
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="I Am Offering Prayer I'll Call You Back Soon!"
+            android:layout_below="@+id/listitem_maghrib"
+            android:paddingLeft="10dp"
+            android:textSize="18sp"
+            android:id="@+id/maghrib_message"
+
+            />
+
+        <ImageButton
+            android:layout_width="57dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/circle_button"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:scaleType="fitXY"
+
+            android:src="@drawable/pencil" />
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="8dp"
+        android:id="@+id/cardview5"
+        android:layout_below="@+id/cardview4"
+
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prayer_Isha"
+                android:padding="5dp"
+                android:textSize="23sp"
+                android:textColor="#000000"
+                android:id="@+id/listitem_isha"
+                android:paddingLeft="10dp"
+
+                />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="I Am Offering Prayer I'll Call You Back Soon!"
+                android:layout_below="@+id/listitem_isha"
+                android:paddingLeft="10dp"
+                android:textSize="18sp"
+                android:id="@+id/isha_message"
+
+                />
+
+            <ImageButton
+                android:layout_width="57dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/circle_button"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:scaleType="fitXY"
+
+                android:src="@drawable/pencil" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    </RelativeLayout>

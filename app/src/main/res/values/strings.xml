@@ -2,6 +2,8 @@
     <string name="app_name">PrayerAutoReply</string>
     <string name="splashscreen">SplashScreen</string>
     <string name="prayer_times">PrayerTimes</string>
+    <string name="autoreplymessages">AutoReply Messages</string>
+
     <string name="prayer_names">Prayer</string>
     <string name="prayer_start_time">StartTime</string>
     <string name="prayer_end_time">EndTime</string>
